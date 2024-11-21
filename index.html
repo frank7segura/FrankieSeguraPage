@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="movil.css">
+
+    <script src="https://kit.fontawesome.com/b971a45ca4.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <header class="cabecera">
+    </header>
+    <div class="logo ancho">
+        <div class="redes">
+            <div class="cont_icono"><a href=""><i class="fa-brands fa-linkedin"></i></a></div>
+            <div class="cont_icono"><a href=""><i class="fa-brands fa-github"></i></i></a></div>
+            <div class="cont_icono"> <a href=""><i class="fa-brands fa-behance"></i></a></div>
+        </div>
+        <figure class>
+            <img src="imagenes/logo_horizontal.svg" alt="Texto descriptivo">
+        </figure>
+        <div class="centrar"></div>
+    </div>
+    <nav class="nav_menu">
+        <div class="navegacion ancho" id="cajamenu">
+            <a href="#">INICIO</a>
+            <a href="#">PORTAFOLIO</a>
+            <a href="#">CONTACTO</a>
+        </div>
+    </nav>
+
+    <section class="slide">
+        <div class="contenedor_info">
+            <div class="info">
+            </div>
+        </div>
+        <div class="text-container">
+            <div class="text-slide">
+              <p>Tu identidad, un clic más cerca.</p>
+            </div>
+            <div class="text-slide2">
+                <p>Llevamos tus ideas a la web.</p>
+            </div>
+        </div>
+        <div class="icono_menu"> <a href="#"><i class="fa-solid fa-bars" id="iconomenu"></i></a></div>
+    </section>
+
+<script>
+    $(document).ready(function () {
+        let index = 0;
+        const $textSlides = $(".text-container > div");
+        
+        function changeText() {
+            // Ocultar el contenedor actual
+            $textSlides.removeClass("active");
+            
+            // Mostrar el siguiente contenedor
+            index = (index + 1) % $textSlides.length;
+            $($textSlides[index]).addClass("active");
+        }
+
+        // Mostrar el primer contenedor al inicio
+        $($textSlides[index]).addClass("active");
+
+        // Cambiar cada 3 segundos
+        setInterval(changeText, 4000);
+    });
+
+    //Desplegar menú móvil
+    $(document).ready(function () {
+        $("#iconomenu").click(function () {
+            $("#cajamenu").toggleClass('abrir_menu');
+        });
+
+        // Cerrar el menú al hacer clic fuera de #cajamenu
+        $(document).click(function (e) {
+            if (!$(e.target).closest("#cajamenu, #iconomenu").length) {
+                $("#cajamenu").removeClass('abrir_menu');
+            }
+        });
+
+        // Cerrar el menú al hacer clic en un enlace
+        $("#cajamenu a").click(function () {
+            $("#cajamenu").removeClass('abrir_menu');
+        });
+    });
+</script>
+ 
+</body>
+</html>

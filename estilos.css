@@ -1,0 +1,174 @@
+
+:root{
+    --amarillo: #F2C201;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat;
+}
+
+
+.ancho{
+    margin: auto;
+    max-width: 1400px;
+}
+
+.cabecera{
+    height: 12px;
+    background: rgb(0,33,116);
+    background: linear-gradient(90deg, rgba(0,33,116,1) 20%, rgba(69,114,230,1) 100%);
+}
+
+.redes{
+    height: 50px;
+    width: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cont_icono a{
+    width: 100%;
+    height: 100%;
+    background-color: #F2C201;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #002174;
+    font-size: 24px;
+}
+
+.cont_icono{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+}
+
+.logo{
+    padding: 15px 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+}
+.centrar{
+    width: 150px;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; */
+}
+
+.logo figure{
+    height: 90px;
+}
+
+.logo figure img{
+    width: 100%;
+    height: 100%;
+}
+
+.navegacion{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    background-color: #333;
+}
+
+.icono_menu{
+    display: none;
+}
+
+.navegacion a{
+    width: 120px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+}
+
+.navegacion a:hover{
+    background-color: #686767;
+}
+
+.slide{
+    height: 90vh;
+    max-height: 75vh;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    background-image: url(imagenes/FotoSlide.jpg);
+    background-size: cover; /* Hace que la imagen ocupe todo el contenedor proporcionalmente */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen en el contenedor */
+}
+
+.contenedor_info{
+    width: 55%;
+    height: 100%;
+    position: relative;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.info{
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 100%; /* Ajusta la altura al 50% del contenedor */
+    background-color: #812d0659; /* Color de fondo */
+    clip-path: polygon(
+        0 0,          /* Esquina superior izquierda */
+        100% 0,       /* Esquina superior derecha */
+        81.8% 100%,     /* Punto inferior derecho */
+        0 100%        /* Punto inferior izquierdo */
+        );
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+.text-container {
+    width: 550px;
+    height: 100px; /* Altura del contenedor */
+    overflow: hidden; /* Oculta el contenido que se sale del área visible */
+    position: relative;
+    text-align: center;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.text-slide, .text-slide2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0; /* Comienza invisible */
+    transform: translateY(20px); /* Comienza un poco abajo */
+    transition: opacity 1s ease, transform 1s ease; /* Suaviza la transición */
+}
+
+.text-slide.active, .text-slide2.active {
+    opacity: 1; /* Vuelve el texto visible */
+    transform: translateY(0); /* Se mueve hacia su posición normal */
+}
+  
+  .text-slide p, .text-slide2 p {
+    height: 50px; /* Altura de cada texto */
+    line-height: 50px; /* Alinea el texto verticalmente */
+    margin: 0;
+    font-size: 48px;
+    color: var(--amarillo);
+  }
+  
